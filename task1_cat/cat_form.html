@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Анкета</title>
+    <link rel="stylesheet" href="cat_form_style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Опросник для владельцев котов</h1>
+    </header>
+    <form>
+      <fieldset>
+        <legend>Основная информация</legend>
+        <br /><label for="name1">Кличка питомца *</label>
+        <input type="text" id="name1" required pattern="[A-z]{1,15}" /><br />
+        <br /><label for="name2">Имя владельца *</label>
+        <input type="text" id="name2" required /><br />
+        <br /><label for="contacts">Контакты владельца *</label>
+        <input type="email" id="contacts" required /><br />
+      </fieldset>
+      <p>Выберите породу питомца</p>
+      <select>
+        <option value="1">Мейн-Кун</option>
+        <option value="2">Вислоухая</option>
+        <option value="3">Сфинкс</option>
+        <option value="4">Британская</option>
+        <option value="5">Бенгальская</option>
+        <option value="6">Ориентальная</option>
+        <option value="7">Сиамская</option>
+        <option value="8">Корниш-рекс</option>
+        <option value="9">Бомбейская</option>
+        <option value="10">Японский бобтейл</option>
+        <option value="11">Манчкин</option>
+        <option value="12">Русская голубая</option>
+        <option value="13" selected>Метис</option>
+      </select>
+      <p>Чем питается ваш кот</p>
+      <input type="checkbox" name="natural" id="natural_id" value="1" />
+      <label for="natural_id"> Натуральный корм</label>
+      <input type="checkbox" name="dry" id="dry_id" value="2" />
+      <label for="dry_id"> Сухой корм</label>
+      <input type="checkbox" name="wet" id="wet_id" value="3" />
+      <label for="wet_id"> Влажный корм</label>
+      <p>Пол питомцa</p>
+      <div>
+        <input type="radio" name="sex" id="sex_id" value="1" />
+        <label for="sex_id"> Самка</label>
+      </div>
+      <input type="radio" name="sex" id="sex_id1" value="2" />
+      <label for="sex_id1">Самец </label>
+      <p>Комментарии владельца:</p>
+      <p>
+        <textarea rows="10">
+Здесь можете оставить любую дополнительную информацию.</textarea
+        >
+      </p>
+      <label for="photo">Приложитe фото питомца:</label>
+      <input type="file" id="photo" />
+      <p><button>Сохранить</button></p>
+    </form>
+  </body>
+</html>

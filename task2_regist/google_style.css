@@ -1,0 +1,343 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "SVN-Gilroy", "Arial", sans-serif;
+  src: url("../fonts/SVN-GilroyBold.woff2"), url("../fonts/SVN-GilroyBold.woff");
+  font-style: normal;
+  font-weight: 700;
+  color: #003459;
+}
+body {
+  width: 50%;
+  margin: auto;
+  color: #202124;
+  font-family: roboto, "Noto Sans Myanmar UI", arial, sans-serif;
+}
+
+.regform {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 600px;
+  margin: 3% auto;
+  padding: 4% 5%;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.regform__basic,
+.regform__visual {
+  display: block;
+  justify-content: center;
+  width: 55%;
+}
+
+.regform__logo {
+  width: 25%;
+}
+
+.regform__heading {
+  color: #202124;
+  padding-bottom: 0;
+  padding-top: 16px;
+  font-family: "Google Sans", "Noto Sans Myanmar UI", arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.3333;
+  margin-bottom: 0;
+  margin-top: 0;
+  word-break: break-word;
+}
+
+.regform__names,
+.regform__parole,
+.regform__buttons,
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.regform__name,
+.regform__lastname,
+#regform__password,
+.regform__confirm {
+  width: 48%;
+}
+
+.inputs {
+  height: 35px;
+  margin: 4% 0;
+  border: 1px solid #bbbbbb;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.inputs:focus,
+.inputs:hover {
+  border: 2px solid rgb(47, 159, 244);
+}
+
+.regform__hint,
+.regform__parole_hint {
+  font-size: 0.8rem;
+  color: #6f6f6f;
+}
+
+.regform__checkbox {
+  font-size: 0.8rem;
+}
+
+.regform__email {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.regform__yourEmail {
+  width: 100%;
+  margin: 0;
+  color: #bbbbbb;
+  background: none;
+  cursor: pointer;
+}
+
+.regform__visual {
+  width: 40%;
+}
+
+.regform__img {
+  width: 80%;
+  margin: 70px 0 0 10%;
+}
+
+.regform__visual_text {
+  font-size: 1.3rem;
+  text-align: center;
+  color: #6f6f6f;
+}
+
+#regform__password,
+.regform__confirm {
+  margin-bottom: 0;
+}
+
+.password-label {
+  font-size: 0.9rem;
+}
+
+.button {
+  width: 90px;
+  height: 35px;
+  margin: 40px 0;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  border: none;
+  cursor: pointer;
+}
+
+.regform__login,
+.regform__yourEmail {
+  background: none;
+  color: #1a73e8;
+  border: none;
+}
+
+.regform__login {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px;
+}
+
+.regform__yourEmail:hover,
+.regform__login:hover {
+  border: none;
+  background-color: rgb(243, 250, 255);
+  color: #125b8f;
+}
+
+#regform__error,
+#regform__names_error,
+#regform__error_gmail,
+#regform__error_confirm {
+  display: flex;
+  justify-content: center;
+  padding: 1px;
+  font-size: 0.8rem;
+  color: red;
+}
+
+#regform__names_error {
+  margin-top: -10px;
+}
+
+.regform__next {
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  transition: all 0.2s ease;
+}
+
+.regform__next:hover {
+  background-color: #125b8f;
+  transform: scale(1.01, 1.01);
+  -webkit-transform: scale(1.01, 1.01);
+  -moz-transform: scale(1.01, 1.01);
+  -ms-transform: scale(1.01, 1.01);
+  -o-transform: scale(1.01, 1.01);
+}
+
+/*Стилизация Checkbox*/
+.regform__checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.regform__checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+
+.regform__checkbox + label:before {
+  content: "";
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin: 20px 20px 20px 0;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid #6f6f6f;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+  -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
+}
+
+.regform__checkbox:checked + label:before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+.regform__checkbox:focus + label:before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+} /*end checkbox*/
+.footer__nav_link {
+  padding: 10px;
+  font-size: 0.8rem;
+  color: #353535;
+}
+
+.footer__nav_link:hover {
+  background-color: #f3f8fe;
+}
+
+.footer__select {
+  padding: 10px 20px 10px 0;
+  font-size: 0.9rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: #353535;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer__select-wrapper {
+  position: relative;
+}
+
+.footer__select-wrapper:after {
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5.4px 5px 0 5px;
+  border-color: #353535 transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+@media screen and (max-width: 1024px) {
+  .regform__visual {
+    display: none;
+  }
+  .regform__basic {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    width: 100%;
+  }
+  .regform {
+    width: 90%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    border: none;
+    margin: 0 5% 0 3%;
+    padding: 0;
+  }
+  .regform__basic,
+  .regform__visual,
+  .footer {
+    display: block;
+  }
+  .regform__yourEmail {
+    width: 90%;
+    margin: 0 5% 0 3%;
+  }
+  .regform__visual {
+    display: none;
+  }
+  .regform__heading {
+    font-size: 1rem;
+  }
+  .hint {
+    font-size: 0.8rem;
+  }
+  .footer__select-wrapper {
+    width: 25%;
+    margin: auto 0 auto 10px;
+  }
+} /*# sourceMappingURL=reg_form_style.css.map */

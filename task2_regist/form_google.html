@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Создайте аккаунт Google</title>
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="google_style.css" />
+    <link rel="shortcut icon" href="google.png" />
+  </head>
+  <body>
+    <form name="form" id="regform" class="regform">
+      <div class="regform__basic">
+        <img class="regform__logo" src="google_logo.svg" alt="Google" />
+        <h1 class="regform__heading">Создайте аккаунт Google</h1>
+        <div class="regform__names">
+          <input
+            type="text"
+            id="regform__name"
+            class="regform__name inputs"
+            placeholder=" Имя"
+            required
+          />
+          <input
+            type="text"
+            id="regform__lastname"
+            class="regform__lastname inputs"
+            placeholder=" Фамилия"
+            required
+          />
+        </div>
+        <div id="regform__names_error"></div>
+        <input
+          type="text"
+          id="regform__email"
+          class="regform__email inputs"
+          placeholder=" Имя пользователя"
+          pattern="^[a-zA-Z][a-zA-Z0-9-]+$"
+          required
+        />
+        <div id="regform__error_gmail"></div>
+        <p id="regform__hint" class="regform__hint hint">
+          Можно использовать буквы латинского алфавита, цифры и точки.
+        </p>
+        <input
+          type="button"
+          class="regform__yourEmail inputs"
+          value="Использовать текущий адрес электронной почты"
+        />
+        <div class="regform__parole">
+          <input
+            type="password"
+            id="regform__password"
+            class="inputs"
+            placeholder=" Пароль"
+          />
+          <input
+            type="password"
+            id="regform__confirm"
+            class="regform__confirm inputs"
+            placeholder=" Подтвердить"
+          />
+        </div>
+        <div id="regform__error"></div>
+        <div id="regform__error_confirm"></div>
+        <p id="regform__parole_hint" class="regform__parole_hint hint">
+          Пароль должен содержать не менее восьми знаков, включать буквы, цифры
+          и специальные символы
+        </p>
+        <input
+          type="checkbox"
+          id="password"
+          name="password"
+          class="regform__checkbox inputs"
+        />
+        <label for="password" class="password-label"> Показать пароль</label>
+        <div class="regform__buttons">
+          <button
+            name="button"
+            id="button"
+            class="regform__login button"
+            onclick="checkVal()"
+          >
+            Войти
+          </button>
+          <button
+            id="button"
+            name="button"
+            class="regform__next button"
+            onclick="checkVal()"
+          >
+            Далее
+          </button>
+        </div>
+      </div>
+      <div class="regform__visual">
+        <img class="regform__img" src="account.svg" alt="Google" />
+        <p class="regform__visual_text">
+          Один аккаунт – для всех сервисов Google.
+        </p>
+      </div>
+    </form>
+    <footer class="footer">
+      <div class="footer__select-wrapper">
+        <select name="footer__select" class="footer__select">
+          <option value="1" class="option">Русский</option>
+          <option value="2" class="option">English</option>
+          <option value="3" class="option">Español</option>
+          <option value="4" class="option">Deutsch</option>
+          <option value="5" class="option">Српски</option>
+          <option value="6" class="option">Indonesia</option>
+        </select>
+      </div>
+      <nav class="footer__nav">
+        <a class="footer__nav_link" href="#">Справка</a>
+        <a class="footer__nav_link" href="#">Конфиденциальность</a>
+        <a class="footer__nav_link" href="#">Условия</a>
+      </nav>
+    </footer>
+    <script src="google_script.js"></script>
+  </body>
+</html>
